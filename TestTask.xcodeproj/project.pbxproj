@@ -53,6 +53,10 @@
 		FBB1313025C1E8A900410E56 /* DataResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB1312F25C1E8A900410E56 /* DataResultCell.swift */; };
 		FBB1313D25C1F3A600410E56 /* ReuseCellProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB1313C25C1F3A600410E56 /* ReuseCellProtocol.swift */; };
 		FBB1314225C1FA4D00410E56 /* DefaultLayerValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB1314125C1FA4D00410E56 /* DefaultLayerValue.swift */; };
+		FBB1314525C1FD6000410E56 /* PostDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB1314425C1FD6000410E56 /* PostDetailViewController.swift */; };
+		FBB1314A25C1FDA400410E56 /* PostDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB1314925C1FDA400410E56 /* PostDetailPresenter.swift */; };
+		FBB1314E25C1FDE400410E56 /* PostDetailPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB1314D25C1FDE400410E56 /* PostDetailPresenterProtocol.swift */; };
+		FBB1315125C1FF3500410E56 /* PostDetailViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB1315025C1FF3500410E56 /* PostDetailViewProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -104,6 +108,10 @@
 		FBB1312F25C1E8A900410E56 /* DataResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataResultCell.swift; sourceTree = "<group>"; };
 		FBB1313C25C1F3A600410E56 /* ReuseCellProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReuseCellProtocol.swift; sourceTree = "<group>"; };
 		FBB1314125C1FA4D00410E56 /* DefaultLayerValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultLayerValue.swift; sourceTree = "<group>"; };
+		FBB1314425C1FD6000410E56 /* PostDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailViewController.swift; sourceTree = "<group>"; };
+		FBB1314925C1FDA400410E56 /* PostDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailPresenter.swift; sourceTree = "<group>"; };
+		FBB1314D25C1FDE400410E56 /* PostDetailPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailPresenterProtocol.swift; sourceTree = "<group>"; };
+		FBB1315025C1FF3500410E56 /* PostDetailViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailViewProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,7 +152,7 @@
 				FB5F525525BACE0A00EC19AF /* ModuleBuilder */,
 				FB5F524D25BACDD200EC19AF /* Routing */,
 				FB5F523F25BACD8A00EC19AF /* ModuleDataResult */,
-				FB5F527425BAE94600EC19AF /* DataResultSection.swift */,
+				FBB1314725C1FD7900410E56 /* ModulePostDetail */,
 				FB5F528425BF04FF00EC19AF /* Extension */,
 				FB5F522D25BAC8D700EC19AF /* Assets.xcassets */,
 				FB5F522F25BAC8D700EC19AF /* LaunchScreen.storyboard */,
@@ -156,6 +164,7 @@
 		FB5F523F25BACD8A00EC19AF /* ModuleDataResult */ = {
 			isa = PBXGroup;
 			children = (
+				FB5F527425BAE94600EC19AF /* DataResultSection.swift */,
 				FBB1313225C1E8C400410E56 /* View */,
 				FBB1313325C1E8D700410E56 /* Presenter */,
 				FBB1313625C1F37400410E56 /* Protocols */,
@@ -275,6 +284,25 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
+		FBB1314725C1FD7900410E56 /* ModulePostDetail */ = {
+			isa = PBXGroup;
+			children = (
+				FBB1314425C1FD6000410E56 /* PostDetailViewController.swift */,
+				FBB1314925C1FDA400410E56 /* PostDetailPresenter.swift */,
+				FBB1315425C2056F00410E56 /* Protocols */,
+			);
+			path = ModulePostDetail;
+			sourceTree = "<group>";
+		};
+		FBB1315425C2056F00410E56 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				FBB1314D25C1FDE400410E56 /* PostDetailPresenterProtocol.swift */,
+				FBB1315025C1FF3500410E56 /* PostDetailViewProtocol.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -344,6 +372,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FBB1314E25C1FDE400410E56 /* PostDetailPresenterProtocol.swift in Sources */,
 				FB5F527525BAE94600EC19AF /* DataResultSection.swift in Sources */,
 				FBB1312925C1DA0800410E56 /* Status.swift in Sources */,
 				FBB1312625C1D9EC00410E56 /* TimeLeftToSpace.swift in Sources */,
@@ -366,12 +395,15 @@
 				FB5F523D25BACD8500EC19AF /* DataResultPresenterProtocol.swift in Sources */,
 				FBB1310225C1D61300410E56 /* Size.swift in Sources */,
 				FBB1314225C1FA4D00410E56 /* DefaultLayerValue.swift in Sources */,
+				FBB1314525C1FD6000410E56 /* PostDetailViewController.swift in Sources */,
 				FB5F524125BACDA500EC19AF /* DataResultPresenter.swift in Sources */,
 				FB5F522525BAC8D200EC19AF /* AppDelegate.swift in Sources */,
 				FB5F524825BACDC100EC19AF /* ModuleBuilder.swift in Sources */,
 				FB5F527825BAEA4900EC19AF /* Links.swift in Sources */,
 				FBB1311525C1D6E400410E56 /* Content.swift in Sources */,
+				FBB1315125C1FF3500410E56 /* PostDetailViewProtocol.swift in Sources */,
 				FBB130F925C1D5A700410E56 /* Banner.swift in Sources */,
+				FBB1314A25C1FDA400410E56 /* PostDetailPresenter.swift in Sources */,
 				FB5F522725BAC8D200EC19AF /* SceneDelegate.swift in Sources */,
 				FBB1312025C1D9AE00410E56 /* Stats.swift in Sources */,
 				FBB1313D25C1F3A600410E56 /* ReuseCellProtocol.swift in Sources */,

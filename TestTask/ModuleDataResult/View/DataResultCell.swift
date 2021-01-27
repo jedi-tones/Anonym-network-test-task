@@ -75,7 +75,6 @@ class DataResultCell: UICollectionViewCell, ReuseCellProtocol {
                 }
             }
         }
-        
     }
     
     private func setupConstraints(){

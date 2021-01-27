@@ -21,7 +21,7 @@ extension UIColor {
     }
     
     static func myBackgroundColor() -> UIColor {
-        dynamicColor(dark: #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1), light: #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1))
+        dynamicColor(dark: #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1), light: #colorLiteral(red: 0.9518703818, green: 0.9462117553, blue: 0.9562200904, alpha: 1))
     }
     
     static func myLabelColor() -> UIColor {

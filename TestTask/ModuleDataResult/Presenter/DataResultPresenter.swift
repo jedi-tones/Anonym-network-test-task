@@ -9,16 +9,16 @@ import UIKit
 
 class DataResultPresenter: DataResultPresenterProtocol {
     
-    weak var view: DataResultViewProtocol?
-    let networkService: NetworkServiceProtocol!
-    let router: DataResultRouterProtocol!
-    
-    var dataSource: UICollectionViewDiffableDataSource<DataResultSection, Item>?
-    var entity: DataModel? {
+    private weak var view: DataResultViewProtocol?
+    private let networkService: NetworkServiceProtocol!
+    private let router: DataResultRouterProtocol!
+    private var entity: DataModel? {
         didSet{
             updateDataSource()
         }
     }
+    
+    var dataSource: UICollectionViewDiffableDataSource<DataResultSection, Item>?
     
     required init(view: DataResultViewProtocol,
                   networkService: NetworkServiceProtocol,
