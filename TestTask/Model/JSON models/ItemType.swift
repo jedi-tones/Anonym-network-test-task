@@ -9,4 +9,5 @@ import Foundation
 
 enum ItemType: String, Decodable {
     case plain = "PLAIN"
+    case plainCover = "PLAIN_COVER"
 }

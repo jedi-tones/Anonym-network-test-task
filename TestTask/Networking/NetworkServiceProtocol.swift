@@ -10,6 +10,7 @@ import Foundation
 protocol NetworkServiceProtocol {
     func createRequest(stringURL: String, complition: @escaping (Result<URLRequest, NetworkError>) -> Void)
     func createDataTask<T:Decodable>(request: URLRequest, complition: @escaping (Result<T, NetworkError>) -> Void)
+    func createURLDataTask(url: URL, complition: @escaping (Result<Data, NetworkError>) -> Void)
 }
 
 extension NetworkServiceProtocol {
@@ -56,9 +57,44 @@ extension NetworkServiceProtocol {
         }
     }
     
+    private func getData(url: URL, complition: @escaping (Result<Data, NetworkError>) -> Void) -> URLSessionDataTask {
+        return URLSession.shared.dataTask(with: url){ data, response, error in
+            
+            guard let response = response as? HTTPURLResponse else {
+                complition(.failure(.requestFail))
+                return
+            }
+           
+            switch response.statusCode {
+            case 200:
+                guard let data = data else {
+                    complition(.failure(.invalidData))
+                    return
+                }
+                DispatchQueue.main.async {
+                    complition(.success(data))
+                }
+            case 300:
+                complition(.failure(.requestFail))
+            case 400:
+                complition(.failure(.requestFail))
+            case 500:
+                complition(.failure(.requestFail))
+            default:
+                complition(.failure(.requestFail))
+                
+            }
+        }
+    }
+    
     func createDataTask<T:Decodable>(request: URLRequest, complition: @escaping (Result<T, NetworkError>) -> Void) {
         decodingData(request: request,
                      decodingType: T.self,
                      complition: complition).resume()
+    }
+    
+    func createURLDataTask(url: URL, complition: @escaping (Result<Data, NetworkError>) -> Void) {
+        getData(url: url,
+                complition: complition).resume()
     }
 }

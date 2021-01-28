@@ -36,9 +36,25 @@ final class PostDetailPresenter: PostDetailPresenterProtocol {
             switch content.type {
             
             case .image:
-                if let _ = content.data.original?.url {
-                    postImage = UIImage(systemName: "person",
-                                              withConfiguration: UIImage.SymbolConfiguration(weight: .heavy))
+                if let stringURL = content.data.original?.url,
+                   let url = URL(string: stringURL) {
+                    ImageLoader.shared.loadImage(from: url) { [weak self] result in
+                        switch result {
+                        
+                        case .success(let imageTuple):
+                            //if cell don't reuse
+                            if url == imageTuple.1 {
+                                if let image = imageTuple.0 {
+                                    self?.postImage = image
+                                } else {
+                                    self?.postImage = UIImage(systemName: "photo")?.withTintColor(.myLabelColor())
+                                }
+                                
+                            }
+                        case .failure(_):
+                            break
+                        }
+                    }
                 }
             case .tags:
                 if let tags = content.data.values {

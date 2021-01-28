@@ -61,6 +61,9 @@
 		FBB1315A25C2181300410E56 /* DataSortType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB1315925C2181300410E56 /* DataSortType.swift */; };
 		FBB1315E25C21F3200410E56 /* LinkGenerateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB1315D25C21F3200410E56 /* LinkGenerateService.swift */; };
 		FBB1316125C220A100410E56 /* GetRequestParametrs.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB1316025C220A100410E56 /* GetRequestParametrs.swift */; };
+		FBB1316425C23AE500410E56 /* ImageCacheProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB1316325C23AE500410E56 /* ImageCacheProtocol.swift */; };
+		FBB1316825C23B7A00410E56 /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB1316725C23B7A00410E56 /* ImageCache.swift */; };
+		FBB1316C25C23FEA00410E56 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB1316B25C23FEA00410E56 /* ImageLoader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -120,6 +123,9 @@
 		FBB1315925C2181300410E56 /* DataSortType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSortType.swift; sourceTree = "<group>"; };
 		FBB1315D25C21F3200410E56 /* LinkGenerateService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkGenerateService.swift; sourceTree = "<group>"; };
 		FBB1316025C220A100410E56 /* GetRequestParametrs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetRequestParametrs.swift; sourceTree = "<group>"; };
+		FBB1316325C23AE500410E56 /* ImageCacheProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCacheProtocol.swift; sourceTree = "<group>"; };
+		FBB1316725C23B7A00410E56 /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
+		FBB1316B25C23FEA00410E56 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +162,7 @@
 				FB5F522625BAC8D200EC19AF /* SceneDelegate.swift */,
 				FB5F527F25BF03C500EC19AF /* Service */,
 				FB5F527225BADE8500EC19AF /* Model */,
+				FBB1316625C23B1C00410E56 /* ImageCache */,
 				FB5F526825BAD43700EC19AF /* Networking */,
 				FB5F525525BACE0A00EC19AF /* ModuleBuilder */,
 				FB5F524D25BACDD200EC19AF /* Routing */,
@@ -202,6 +209,7 @@
 		FB5F526825BAD43700EC19AF /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				FBB1316B25C23FEA00410E56 /* ImageLoader.swift */,
 				FB5F526B25BAD65200EC19AF /* NetworkError.swift */,
 				FB5F526225BAD41700EC19AF /* NetworkService.swift */,
 				FB5F526525BAD42100EC19AF /* NetworkServiceProtocol.swift */,
@@ -246,6 +254,7 @@
 				FB5F526F25BADE7300EC19AF /* DataModel.swift */,
 				FBB130EA25C1D4DF00410E56 /* DataModelData.swift */,
 				FBB130ED25C1D51600410E56 /* Item.swift */,
+				FBB1311425C1D6E400410E56 /* Content.swift */,
 				FBB130F125C1D57500410E56 /* Author.swift */,
 				FBB130F525C1D59500410E56 /* Auth.swift */,
 				FBB130F825C1D5A700410E56 /* Banner.swift */,
@@ -257,7 +266,6 @@
 				FBB1310A25C1D66700410E56 /* Gender.swift */,
 				FBB1310D25C1D69700410E56 /* Statistics.swift */,
 				FBB1311025C1D6A800410E56 /* Awards.swift */,
-				FBB1311425C1D6E400410E56 /* Content.swift */,
 				FBB1311725C1D76100410E56 /* ContentData.swift */,
 				FBB1311C25C1D98C00410E56 /* Language.swift */,
 				FBB1311F25C1D9AE00410E56 /* Stats.swift */,
@@ -313,6 +321,15 @@
 				FBB1315025C1FF3500410E56 /* PostDetailViewProtocol.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		FBB1316625C23B1C00410E56 /* ImageCache */ = {
+			isa = PBXGroup;
+			children = (
+				FBB1316325C23AE500410E56 /* ImageCacheProtocol.swift */,
+				FBB1316725C23B7A00410E56 /* ImageCache.swift */,
+			);
+			path = ImageCache;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -396,6 +413,7 @@
 				FB5F524B25BACDCE00EC19AF /* Router.swift in Sources */,
 				FB5F526C25BAD65200EC19AF /* NetworkError.swift in Sources */,
 				FBB1315E25C21F3200410E56 /* LinkGenerateService.swift in Sources */,
+				FBB1316825C23B7A00410E56 /* ImageCache.swift in Sources */,
 				FB5F525F25BACF5500EC19AF /* DataResultRouterProtocol.swift in Sources */,
 				FB5F522925BAC8D200EC19AF /* DataResultViewController.swift in Sources */,
 				FBB130F225C1D57500410E56 /* Author.swift in Sources */,
@@ -410,6 +428,7 @@
 				FBB1314225C1FA4D00410E56 /* DefaultLayerValue.swift in Sources */,
 				FBB1314525C1FD6000410E56 /* PostDetailViewController.swift in Sources */,
 				FB5F524125BACDA500EC19AF /* DataResultPresenter.swift in Sources */,
+				FBB1316C25C23FEA00410E56 /* ImageLoader.swift in Sources */,
 				FB5F522525BAC8D200EC19AF /* AppDelegate.swift in Sources */,
 				FB5F524825BACDC100EC19AF /* ModuleBuilder.swift in Sources */,
 				FB5F527825BAEA4900EC19AF /* Links.swift in Sources */,
@@ -425,6 +444,7 @@
 				FBB1313025C1E8A900410E56 /* DataResultCell.swift in Sources */,
 				FBB1310825C1D65700410E56 /* AuthorData.swift in Sources */,
 				FB5F526325BAD41700EC19AF /* NetworkService.swift in Sources */,
+				FBB1316425C23AE500410E56 /* ImageCacheProtocol.swift in Sources */,
 				FB5F526625BAD42100EC19AF /* NetworkServiceProtocol.swift in Sources */,
 				FBB1311825C1D76100410E56 /* ContentData.swift in Sources */,
 				FBB130FF25C1D5FC00410E56 /* ImageData.swift in Sources */,

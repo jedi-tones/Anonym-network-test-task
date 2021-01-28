@@ -7,7 +7,7 @@
 
 import Foundation
 
-class NetworkService: NetworkServiceProtocol {
+final class NetworkService: NetworkServiceProtocol {
     func createRequest(stringURL: String, complition: @escaping (Result<URLRequest, NetworkError>) -> Void) {
         
         guard let URL = URL(string: stringURL) else {

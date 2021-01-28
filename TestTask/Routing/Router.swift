@@ -7,7 +7,7 @@
 
 import UIKit
 
-class Router: DataResultRouterProtocol {
+final class Router: DataResultRouterProtocol {
     var navigationController: UINavigationController?
     var moduleBuilder: ModuleBuilderProtocol?
     

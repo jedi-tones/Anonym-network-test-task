@@ -32,7 +32,7 @@ final class DataResultPresenter: DataResultPresenterProtocol {
         if isUpdate {
             items.removeAll()
         }
-        let itemsCount = 5
+        let itemsCount = 20
         let stringLink = LinkGenerateService.shared.getMainLink(itemsCount: itemsCount,
                                                                 cursor: isUpdate == true ? nil : cursor,
                                                                 sortType: sortedType)
@@ -101,7 +101,7 @@ final class DataResultPresenter: DataResultPresenterProtocol {
     
     
     func showDetail(indexPath: IndexPath) {
-        guard let item = entity?.data.items[indexPath.item] else { return }
+        let item = items[indexPath.item]
         router.showDetailResult(selectedItem: item)
     }
     

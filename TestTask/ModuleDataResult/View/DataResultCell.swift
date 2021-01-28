@@ -49,6 +49,7 @@ final class DataResultCell: UICollectionViewCell, ReuseCellProtocol {
         contentView.layer.cornerRadius = CGFloat(DefaultLayerValue.cornerRadius.rawValue)
     }
     
+    //MARK: configure
     func configure(item: Item) {
         
         //setup author name
@@ -63,9 +64,25 @@ final class DataResultCell: UICollectionViewCell, ReuseCellProtocol {
             switch content.type {
             
             case .image:
-                if let _ = content.data.original?.url {
-                    postImage.image = UIImage(systemName: "person",
-                                              withConfiguration: UIImage.SymbolConfiguration(weight: .heavy))
+                if let stringURL = content.data.original?.url,
+                   let url = URL(string: stringURL) {
+                    ImageLoader.shared.loadImage(from: url) { [weak self] result in
+                        switch result {
+                        
+                        case .success(let imageTuple):
+                            //if cell don't reuse
+                            if url == imageTuple.1 {
+                                if let image = imageTuple.0 {
+                                    self?.postImage.image = image
+                                } else {
+                                    self?.postImage.image = UIImage(systemName: "photo")?.withTintColor(.myLabelColor())
+                                }
+                                
+                            }
+                        case .failure(_):
+                            break
+                        }
+                    }
                 }
             case .tags:
                 break
@@ -77,6 +94,12 @@ final class DataResultCell: UICollectionViewCell, ReuseCellProtocol {
         }
     }
     
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        postImage.image = nil
+    }
+    
+    //MARK: setupConstraints
     private func setupConstraints(){
         contentView.addSubview(authorName)
         contentView.addSubview(postText)
@@ -91,7 +114,7 @@ final class DataResultCell: UICollectionViewCell, ReuseCellProtocol {
             postText.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10),
             
             postImage.topAnchor.constraint(equalTo: postText.bottomAnchor, constant: 10),
-            postImage.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
+            postImage.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10),
             postImage.heightAnchor.constraint(equalTo: postImage.widthAnchor),
             postImage.leadingAnchor.constraint(equalTo: postText.leadingAnchor),
             postImage.trailingAnchor.constraint(equalTo: postText.trailingAnchor)
