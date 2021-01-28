@@ -10,6 +10,7 @@ import UIKit
 final class DataResultCell: UICollectionViewCell, ReuseCellProtocol {
     static let reuseID = "DataResultCell"
     
+    private var currentImageURL: URL?
     private let authorName: UILabel = {
         $0.translatesAutoresizingMaskIntoConstraints = false
         $0.numberOfLines = 1
@@ -67,12 +68,13 @@ final class DataResultCell: UICollectionViewCell, ReuseCellProtocol {
             case .image:
                 if let stringURL = content.data.original?.url,
                    let url = URL(string: stringURL) {
+                    currentImageURL = url
                     ImageLoader.shared.loadImage(from: url) { [weak self] result in
                         switch result {
                         
                         case .success(let imageTuple):
                             //if cell don't reuse
-                            if url == imageTuple.1 {
+                            if self?.currentImageURL == imageTuple.1 {
                                 if let image = imageTuple.0 {
                                     self?.postImage.image = image
                                 } else {
@@ -98,6 +100,7 @@ final class DataResultCell: UICollectionViewCell, ReuseCellProtocol {
     override func prepareForReuse() {
         super.prepareForReuse()
         postImage.image = nil
+        currentImageURL = nil
     }
     
     //MARK: setupConstraints
