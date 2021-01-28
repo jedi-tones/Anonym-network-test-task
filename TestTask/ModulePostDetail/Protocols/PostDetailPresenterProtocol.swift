@@ -12,5 +12,5 @@ protocol PostDetailPresenterProtocol {
     var postText: String? { get set }
     var authorName: String? { get set }
     var postTags: String? { get set }
-    init(view: PostDetailViewProtocol, selectedItem: Item)
+    init(view: PostDetailViewControllerProtocol, selectedItem: Item)
 }

@@ -2,11 +2,11 @@
 //  PostDetailViewProtocol.swift
 //  TestTask
 //
-//  Created by Денис Щиголев on 27.01.2021.
+//  Created by Денис Щиголев on 28.01.2021.
 //
 
-import Foundation
+import UIKit
 
-protocol PostDetailViewProtocol: class {
-    
+protocol PostDetailViewProtocol {
+    func configure(authorName: String?, postText: String?, postTags: String?, postImage: UIImage?)
 }

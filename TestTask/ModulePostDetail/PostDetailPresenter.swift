@@ -9,7 +9,7 @@ import UIKit
 
 final class PostDetailPresenter: PostDetailPresenterProtocol {
     
-    private weak var view: PostDetailViewProtocol?
+    private weak var view: PostDetailViewControllerProtocol?
     private var item: Item
     
     var postImage: UIImage?
@@ -17,7 +17,7 @@ final class PostDetailPresenter: PostDetailPresenterProtocol {
     var postTags: String?
     var authorName: String?
     
-    required init(view: PostDetailViewProtocol, selectedItem: Item) {
+    required init(view: PostDetailViewControllerProtocol, selectedItem: Item) {
         self.view = view
         self.item = selectedItem
         setupModelsData()

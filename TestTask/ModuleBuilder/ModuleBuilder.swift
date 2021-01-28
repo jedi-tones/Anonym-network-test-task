@@ -17,7 +17,6 @@ class ModuleBuilder: ModuleBuilderProtocol {
         viewController.presenter = presenter
         
         return viewController
-        
     }
     
     func createDetailResultModule(router: DataResultRouterProtocol, selectedItem: Item) -> UIViewController {

@@ -8,7 +8,7 @@
 import XCTest
 @testable import TestTask
 
-class MockView: PostDetailViewProtocol {
+class MockView: PostDetailViewControllerProtocol {
     
 }
 

@@ -56,7 +56,7 @@
 		FBB1314525C1FD6000410E56 /* PostDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB1314425C1FD6000410E56 /* PostDetailViewController.swift */; };
 		FBB1314A25C1FDA400410E56 /* PostDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB1314925C1FDA400410E56 /* PostDetailPresenter.swift */; };
 		FBB1314E25C1FDE400410E56 /* PostDetailPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB1314D25C1FDE400410E56 /* PostDetailPresenterProtocol.swift */; };
-		FBB1315125C1FF3500410E56 /* PostDetailViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB1315025C1FF3500410E56 /* PostDetailViewProtocol.swift */; };
+		FBB1315125C1FF3500410E56 /* PostDetailViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB1315025C1FF3500410E56 /* PostDetailViewControllerProtocol.swift */; };
 		FBB1315725C20A2300410E56 /* UIScrollView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB1315625C20A2300410E56 /* UIScrollView+Extension.swift */; };
 		FBB1315A25C2181300410E56 /* DataSortType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB1315925C2181300410E56 /* DataSortType.swift */; };
 		FBB1315E25C21F3200410E56 /* LinkGenerateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB1315D25C21F3200410E56 /* LinkGenerateService.swift */; };
@@ -65,6 +65,8 @@
 		FBB1316825C23B7A00410E56 /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB1316725C23B7A00410E56 /* ImageCache.swift */; };
 		FBB1316C25C23FEA00410E56 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB1316B25C23FEA00410E56 /* ImageLoader.swift */; };
 		FBB1318925C2517600410E56 /* PostDetailModuleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB1318825C2517600410E56 /* PostDetailModuleTests.swift */; };
+		FBB1319625C25BDD00410E56 /* PostDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB1319525C25BDD00410E56 /* PostDetailView.swift */; };
+		FBB1319C25C25C6800410E56 /* PostDetailViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB1319B25C25C6800410E56 /* PostDetailViewProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -129,7 +131,7 @@
 		FBB1314425C1FD6000410E56 /* PostDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailViewController.swift; sourceTree = "<group>"; };
 		FBB1314925C1FDA400410E56 /* PostDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailPresenter.swift; sourceTree = "<group>"; };
 		FBB1314D25C1FDE400410E56 /* PostDetailPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailPresenterProtocol.swift; sourceTree = "<group>"; };
-		FBB1315025C1FF3500410E56 /* PostDetailViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailViewProtocol.swift; sourceTree = "<group>"; };
+		FBB1315025C1FF3500410E56 /* PostDetailViewControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailViewControllerProtocol.swift; sourceTree = "<group>"; };
 		FBB1315625C20A2300410E56 /* UIScrollView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScrollView+Extension.swift"; sourceTree = "<group>"; };
 		FBB1315925C2181300410E56 /* DataSortType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSortType.swift; sourceTree = "<group>"; };
 		FBB1315D25C21F3200410E56 /* LinkGenerateService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkGenerateService.swift; sourceTree = "<group>"; };
@@ -140,6 +142,8 @@
 		FBB1317425C24FD500410E56 /* TestTaskTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestTaskTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBB1317825C24FD500410E56 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FBB1318825C2517600410E56 /* PostDetailModuleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailModuleTests.swift; sourceTree = "<group>"; };
+		FBB1319525C25BDD00410E56 /* PostDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailView.swift; sourceTree = "<group>"; };
+		FBB1319B25C25C6800410E56 /* PostDetailViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailViewProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -331,6 +335,7 @@
 			isa = PBXGroup;
 			children = (
 				FBB1314425C1FD6000410E56 /* PostDetailViewController.swift */,
+				FBB1319525C25BDD00410E56 /* PostDetailView.swift */,
 				FBB1314925C1FDA400410E56 /* PostDetailPresenter.swift */,
 				FBB1315425C2056F00410E56 /* Protocols */,
 			);
@@ -341,7 +346,8 @@
 			isa = PBXGroup;
 			children = (
 				FBB1314D25C1FDE400410E56 /* PostDetailPresenterProtocol.swift */,
-				FBB1315025C1FF3500410E56 /* PostDetailViewProtocol.swift */,
+				FBB1315025C1FF3500410E56 /* PostDetailViewControllerProtocol.swift */,
+				FBB1319B25C25C6800410E56 /* PostDetailViewProtocol.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -482,6 +488,7 @@
 				FBB130EE25C1D51600410E56 /* Item.swift in Sources */,
 				FB5F524B25BACDCE00EC19AF /* Router.swift in Sources */,
 				FB5F526C25BAD65200EC19AF /* NetworkError.swift in Sources */,
+				FBB1319625C25BDD00410E56 /* PostDetailView.swift in Sources */,
 				FBB1315E25C21F3200410E56 /* LinkGenerateService.swift in Sources */,
 				FBB1316825C23B7A00410E56 /* ImageCache.swift in Sources */,
 				FB5F525F25BACF5500EC19AF /* DataResultRouterProtocol.swift in Sources */,
@@ -503,7 +510,7 @@
 				FB5F524825BACDC100EC19AF /* ModuleBuilder.swift in Sources */,
 				FB5F527825BAEA4900EC19AF /* Links.swift in Sources */,
 				FBB1311525C1D6E400410E56 /* Content.swift in Sources */,
-				FBB1315125C1FF3500410E56 /* PostDetailViewProtocol.swift in Sources */,
+				FBB1315125C1FF3500410E56 /* PostDetailViewControllerProtocol.swift in Sources */,
 				FBB130F925C1D5A700410E56 /* Banner.swift in Sources */,
 				FBB1314A25C1FDA400410E56 /* PostDetailPresenter.swift in Sources */,
 				FB5F522725BAC8D200EC19AF /* SceneDelegate.swift in Sources */,
@@ -517,6 +524,7 @@
 				FBB1316425C23AE500410E56 /* ImageCacheProtocol.swift in Sources */,
 				FB5F526625BAD42100EC19AF /* NetworkServiceProtocol.swift in Sources */,
 				FBB1311825C1D76100410E56 /* ContentData.swift in Sources */,
+				FBB1319C25C25C6800410E56 /* PostDetailViewProtocol.swift in Sources */,
 				FBB130FF25C1D5FC00410E56 /* ImageData.swift in Sources */,
 				FB5F528925BF099100EC19AF /* UIFont+Extension.swift in Sources */,
 				FBB1311125C1D6A800410E56 /* Awards.swift in Sources */,
