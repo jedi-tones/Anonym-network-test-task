@@ -12,6 +12,7 @@ enum NetworkError: Error {
     case parsingJSONFail
     case requestFail
     case incorrectURL
+    case badCursorInResponse
 }
 
 extension NetworkError: LocalizedError {
@@ -24,6 +25,8 @@ extension NetworkError: LocalizedError {
             return NSLocalizedString("Ошибка JSON", comment: "")
         case .requestFail:
             return NSLocalizedString("Ошибка запроса", comment: "")
+        case .badCursorInResponse:
+            return NSLocalizedString("Некорректный курсор в ответе", comment: "")
         case .incorrectURL:
             return NSLocalizedString("Некорректный URL", comment: "")
         }

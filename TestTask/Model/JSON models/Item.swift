@@ -11,15 +11,15 @@ struct Item: Decodable, Hashable {
     
     let id: String
     let type: ItemType
-    let isCommentable, hasAdultContent, isAuthorHidden, isHiddenInProfile: Bool
     let contents: [Content]
-    let language: Language
-    let awards: Awards
     let createdAt, updatedAt: Int
-    let status: Status
     let author: Author?
-    let stats: Stats
-    let isMyFavorite: Bool
+    // let isCommentable, hasAdultContent, isAuthorHidden, isHiddenInProfile: Bool
+    // let language: Language
+    // let awards: Awards
+    // let status: Status
+    // let stats: Stats
+    // let isMyFavorite: Bool
     
     static func == (lhs: Item, rhs: Item) -> Bool {
         lhs.id == rhs.id

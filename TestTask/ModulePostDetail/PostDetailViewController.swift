@@ -7,7 +7,7 @@
 
 import UIKit
 
-class PostDetailViewController: UIViewController, PostDetailViewProtocol {
+final class PostDetailViewController: UIViewController, PostDetailViewProtocol {
     
     private let scrollView: UIScrollView = {
         $0.translatesAutoresizingMaskIntoConstraints = false
@@ -54,6 +54,15 @@ class PostDetailViewController: UIViewController, PostDetailViewProtocol {
         super.viewDidLoad()
         setup()
         setupConstraints()
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        scrollView.updateContentView()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         setupData()
     }
     
@@ -71,6 +80,7 @@ class PostDetailViewController: UIViewController, PostDetailViewProtocol {
         postText.text = presenter.postText
         postTags.text = presenter.postTags
         postImage.image = presenter.postImage
+        scrollView.layoutIfNeeded()
     }
 }
 
@@ -85,7 +95,7 @@ extension PostDetailViewController {
         
         NSLayoutConstraint.activate([
             scrollView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            scrollView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
+            scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
             scrollView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
             scrollView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
             
@@ -96,7 +106,7 @@ extension PostDetailViewController {
             postText.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 10),
             postText.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -10),
             
-            postTags.topAnchor.constraint(equalTo: authorName.bottomAnchor, constant: 10),
+            postTags.topAnchor.constraint(equalTo: postText.bottomAnchor, constant: 10),
             postTags.leadingAnchor.constraint(equalTo: postText.leadingAnchor),
             postTags.trailingAnchor.constraint(equalTo: postText.trailingAnchor),
             

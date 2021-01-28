@@ -9,5 +9,5 @@ import UIKit
 
 protocol ModuleBuilderProtocol {
     func createDataResultModule(router: DataResultRouterProtocol) -> UIViewController
-    func createDetailResultModule(router: DataResultRouterProtocol) -> UIViewController
+    func createDetailResultModule(router: DataResultRouterProtocol, selectedItem: Item) -> UIViewController
 }

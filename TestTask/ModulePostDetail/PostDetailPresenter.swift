@@ -7,22 +7,20 @@
 
 import UIKit
 
-class PostDetailPresenter: PostDetailPresenterProtocol {
+final class PostDetailPresenter: PostDetailPresenterProtocol {
     
     private weak var view: PostDetailViewProtocol?
-    private var item: Item {
-        didSet {
-            setupModelsData()
-        }
-    }
+    private var item: Item
     
     var postImage: UIImage?
     var postText: String?
+    var postTags: String?
     var authorName: String?
     
     required init(view: PostDetailViewProtocol, selectedItem: Item) {
         self.view = view
         self.item = selectedItem
+        setupModelsData()
     }
     
     private func setupModelsData() {
@@ -43,7 +41,9 @@ class PostDetailPresenter: PostDetailPresenterProtocol {
                                               withConfiguration: UIImage.SymbolConfiguration(weight: .heavy))
                 }
             case .tags:
-                break
+                if let tags = content.data.values {
+                    postTags = tags.joined(separator: ", ")
+                }
             case .text:
                 if let text = content.data.value {
                     postText = text

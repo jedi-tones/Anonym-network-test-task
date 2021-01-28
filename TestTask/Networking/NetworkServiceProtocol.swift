@@ -9,9 +9,6 @@ import Foundation
 
 protocol NetworkServiceProtocol {
     func createRequest(stringURL: String, complition: @escaping (Result<URLRequest, NetworkError>) -> Void)
-    func createPostRequest(stringURL: String,
-                           parametrs: [String: String],
-                           complition: @escaping (Result<URLRequest, NetworkError>) -> Void)
     func createDataTask<T:Decodable>(request: URLRequest, complition: @escaping (Result<T, NetworkError>) -> Void)
 }
 
@@ -49,7 +46,7 @@ extension NetworkServiceProtocol {
             case 300:
                 complition(.failure(.requestFail))
             case 400:
-                complition(.failure(.requestFail))
+                complition(.failure(.badCursorInResponse)) //bad cursors in response comeback -> error 400 (Bad Request)
             case 500:
                 complition(.failure(.requestFail))
             default:

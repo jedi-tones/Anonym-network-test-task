@@ -20,9 +20,11 @@ class ModuleBuilder: ModuleBuilderProtocol {
         
     }
     
-    func createDetailResultModule(router: DataResultRouterProtocol) -> UIViewController {
-        UIViewController()
+    func createDetailResultModule(router: DataResultRouterProtocol, selectedItem: Item) -> UIViewController {
+        let viewController = PostDetailViewController()
+        let presenter = PostDetailPresenter(view: viewController, selectedItem: selectedItem)
+        viewController.presenter = presenter
+        
+        return viewController
     }
-    
-    
 }

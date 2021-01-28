@@ -18,21 +18,5 @@ class NetworkService: NetworkServiceProtocol {
         complition(.success(request))
     }
     
-    func createPostRequest(stringURL: String,
-                           parametrs: [String: String],
-                           complition: @escaping (Result<URLRequest, NetworkError>) -> Void) {
-        
-        guard let URL = URL(string: stringURL) else {
-            complition(.failure(.incorrectURL))
-            return
-        }
-        var request = URLRequest(url: URL)
-        request.httpMethod = "POST"
-        if let httpBody = try? JSONSerialization.data(withJSONObject: parametrs, options: []) {
-            request.httpBody = httpBody
-        }
-        
-        complition(.success(request))
-    }
 }
 

@@ -57,6 +57,10 @@
 		FBB1314A25C1FDA400410E56 /* PostDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB1314925C1FDA400410E56 /* PostDetailPresenter.swift */; };
 		FBB1314E25C1FDE400410E56 /* PostDetailPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB1314D25C1FDE400410E56 /* PostDetailPresenterProtocol.swift */; };
 		FBB1315125C1FF3500410E56 /* PostDetailViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB1315025C1FF3500410E56 /* PostDetailViewProtocol.swift */; };
+		FBB1315725C20A2300410E56 /* UIScrollView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB1315625C20A2300410E56 /* UIScrollView+Extension.swift */; };
+		FBB1315A25C2181300410E56 /* DataSortType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB1315925C2181300410E56 /* DataSortType.swift */; };
+		FBB1315E25C21F3200410E56 /* LinkGenerateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB1315D25C21F3200410E56 /* LinkGenerateService.swift */; };
+		FBB1316125C220A100410E56 /* GetRequestParametrs.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB1316025C220A100410E56 /* GetRequestParametrs.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -112,6 +116,10 @@
 		FBB1314925C1FDA400410E56 /* PostDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailPresenter.swift; sourceTree = "<group>"; };
 		FBB1314D25C1FDE400410E56 /* PostDetailPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailPresenterProtocol.swift; sourceTree = "<group>"; };
 		FBB1315025C1FF3500410E56 /* PostDetailViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailViewProtocol.swift; sourceTree = "<group>"; };
+		FBB1315625C20A2300410E56 /* UIScrollView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScrollView+Extension.swift"; sourceTree = "<group>"; };
+		FBB1315925C2181300410E56 /* DataSortType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSortType.swift; sourceTree = "<group>"; };
+		FBB1315D25C21F3200410E56 /* LinkGenerateService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkGenerateService.swift; sourceTree = "<group>"; };
+		FBB1316025C220A100410E56 /* GetRequestParametrs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetRequestParametrs.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -207,6 +215,8 @@
 				FBB130F025C1D52B00410E56 /* JSON models */,
 				FB5F527725BAEA4900EC19AF /* Links.swift */,
 				FBB1314125C1FA4D00410E56 /* DefaultLayerValue.swift */,
+				FBB1315925C2181300410E56 /* DataSortType.swift */,
+				FBB1316025C220A100410E56 /* GetRequestParametrs.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -215,6 +225,7 @@
 			isa = PBXGroup;
 			children = (
 				FB5F527C25BF037500EC19AF /* NavigationService.swift */,
+				FBB1315D25C21F3200410E56 /* LinkGenerateService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -223,6 +234,7 @@
 			isa = PBXGroup;
 			children = (
 				FB5F528125BF04FB00EC19AF /* UIColor+Extension.swift */,
+				FBB1315625C20A2300410E56 /* UIScrollView+Extension.swift */,
 				FB5F528825BF099100EC19AF /* UIFont+Extension.swift */,
 			);
 			path = Extension;
@@ -383,6 +395,7 @@
 				FBB130EE25C1D51600410E56 /* Item.swift in Sources */,
 				FB5F524B25BACDCE00EC19AF /* Router.swift in Sources */,
 				FB5F526C25BAD65200EC19AF /* NetworkError.swift in Sources */,
+				FBB1315E25C21F3200410E56 /* LinkGenerateService.swift in Sources */,
 				FB5F525F25BACF5500EC19AF /* DataResultRouterProtocol.swift in Sources */,
 				FB5F522925BAC8D200EC19AF /* DataResultViewController.swift in Sources */,
 				FBB130F225C1D57500410E56 /* Author.swift in Sources */,
@@ -407,6 +420,7 @@
 				FB5F522725BAC8D200EC19AF /* SceneDelegate.swift in Sources */,
 				FBB1312025C1D9AE00410E56 /* Stats.swift in Sources */,
 				FBB1313D25C1F3A600410E56 /* ReuseCellProtocol.swift in Sources */,
+				FBB1315725C20A2300410E56 /* UIScrollView+Extension.swift in Sources */,
 				FBB1311D25C1D98C00410E56 /* Language.swift in Sources */,
 				FBB1313025C1E8A900410E56 /* DataResultCell.swift in Sources */,
 				FBB1310825C1D65700410E56 /* AuthorData.swift in Sources */,
@@ -417,6 +431,8 @@
 				FB5F528925BF099100EC19AF /* UIFont+Extension.swift in Sources */,
 				FBB1311125C1D6A800410E56 /* Awards.swift in Sources */,
 				FBB1310E25C1D69700410E56 /* Statistics.swift in Sources */,
+				FBB1315A25C2181300410E56 /* DataSortType.swift in Sources */,
+				FBB1316125C220A100410E56 /* GetRequestParametrs.swift in Sources */,
 				FB5F524525BACDB300EC19AF /* DataResultViewProtocol.swift in Sources */,
 				FBB130EB25C1D4DF00410E56 /* DataModelData.swift in Sources */,
 				FBB130FC25C1D5DD00410E56 /* BannerData.swift in Sources */,

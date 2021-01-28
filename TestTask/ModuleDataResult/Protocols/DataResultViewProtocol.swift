@@ -9,5 +9,6 @@ import UIKit
 
 protocol DataResultViewProtocol: class {
     var collectionView: UICollectionView? { get set }
+    var isLoading: Bool { get set }
     func showAlert(title: String, text: String)
 }

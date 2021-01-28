@@ -7,7 +7,7 @@
 
 import UIKit
 
-class DataResultCell: UICollectionViewCell, ReuseCellProtocol {
+final class DataResultCell: UICollectionViewCell, ReuseCellProtocol {
     static let reuseID = "DataResultCell"
     
     private let authorName: UILabel = {

@@ -10,5 +10,5 @@ import Foundation
 protocol DataResultRouterProtocol: MainRouterProtocol {
     func initialViewController()
     func popToRoot()
-    func showDetailResult()
+    func showDetailResult(selectedItem: Item)
 }

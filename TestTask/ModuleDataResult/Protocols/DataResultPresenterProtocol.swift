@@ -13,8 +13,9 @@ protocol DataResultPresenterProtocol {
          router: DataResultRouterProtocol)
     
     var dataSource: UICollectionViewDiffableDataSource<DataResultSection, Item>? { get set }
-    func getData()
+    func getData(isUpdate: Bool, complition: @escaping ()-> Void)
     func setupDataSource()
     func updateDataSource()
     func showDetail(indexPath: IndexPath)
+    func changeSort(sortType: DataSortType)
 }

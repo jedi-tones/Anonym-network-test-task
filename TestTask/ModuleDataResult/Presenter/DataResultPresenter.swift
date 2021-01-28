@@ -7,16 +7,15 @@
 
 import UIKit
 
-class DataResultPresenter: DataResultPresenterProtocol {
+final class DataResultPresenter: DataResultPresenterProtocol {
     
     private weak var view: DataResultViewProtocol?
     private let networkService: NetworkServiceProtocol!
     private let router: DataResultRouterProtocol!
-    private var entity: DataModel? {
-        didSet{
-            updateDataSource()
-        }
-    }
+    private var sortedType = DataSortType.mostCommented
+    private var cursor: String?
+    private var entity: DataModel?
+    private var items: [Item] = []
     
     var dataSource: UICollectionViewDiffableDataSource<DataResultSection, Item>?
     
@@ -29,8 +28,14 @@ class DataResultPresenter: DataResultPresenterProtocol {
     }
     
     //MARK: getData
-    func getData() {
-        let stringLink = Links.baseLink.rawValue
+    func getData(isUpdate: Bool, complition: @escaping ()-> Void) {
+        if isUpdate {
+            items.removeAll()
+        }
+        let itemsCount = 5
+        let stringLink = LinkGenerateService.shared.getMainLink(itemsCount: itemsCount,
+                                                                cursor: isUpdate == true ? nil : cursor,
+                                                                sortType: sortedType)
         networkService.createRequest(stringURL: stringLink) {[unowned self] result in
             switch result {
                 
@@ -40,15 +45,22 @@ class DataResultPresenter: DataResultPresenterProtocol {
                     
                     case .success(let entity):
                         self.entity = entity
+                        self.view?.isLoading = false
+                        self.changeItems()
+                        complition()
                     case .failure(let error):
                         DispatchQueue.main.async {
-                            view?.showAlert(title: "Ошибка", text: error.localizedDescription)
+                            let errorText = error == NetworkError.badCursorInResponse ? cursor ?? "" : error.localizedDescription
+                            let errorTitle = error == NetworkError.badCursorInResponse ? NetworkError.badCursorInResponse.localizedDescription : "Ошибка"
+                            view?.showAlert(title: errorTitle, text: errorText)
+                            complition()
                         }
                     }
                 }
                 
             case .failure(let error):
                 view?.showAlert(title: "Ошибка", text: error.localizedDescription)
+                complition()
             }
         }
     }
@@ -80,17 +92,34 @@ class DataResultPresenter: DataResultPresenterProtocol {
     
     //MARK: updateDataSource
     func updateDataSource() {
-        guard let entity = entity,
-              let dataSource = dataSource else { fatalError() }
+        guard let dataSource = dataSource else { fatalError() }
         var snapshot = NSDiffableDataSourceSnapshot<DataResultSection, Item>()
         snapshot.appendSections([.main])
-        snapshot.appendItems(entity.data.items, toSection: .main)
+        snapshot.appendItems(items, toSection: .main)
         dataSource.apply(snapshot)
     }
     
     
     func showDetail(indexPath: IndexPath) {
-        print("ShowDetail \(indexPath.row)")
+        guard let item = entity?.data.items[indexPath.item] else { return }
+        router.showDetailResult(selectedItem: item)
     }
-
+    
+    func changeSort(sortType: DataSortType) {
+        self.sortedType = sortType
+        getData(isUpdate: true, complition: { [weak self] in
+            guard let entity = self?.entity,
+                  entity.data.items.count > 0 else { return }
+            self?.view?.collectionView?.scrollToItem(at: IndexPath(item: 0, section: 0),
+                                                     at: .top, animated: true)
+        })
+    }
+    
+    private func changeItems() {
+        guard let entity = entity else { return }
+        cursor = entity.data.cursor
+        items.append(contentsOf: entity.data.items)
+        
+        updateDataSource()
+    }
 }
