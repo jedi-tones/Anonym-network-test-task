@@ -65,6 +65,11 @@ class PostDetailView: UIView {
         scrollView.alwaysBounceVertical = true
     }
     
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        scrollView.updateContentView()
+    }
+    
     //MARK: setupConstraints
     private func setupConstraints() {
         addSubview(scrollView)
