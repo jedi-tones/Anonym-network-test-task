@@ -64,7 +64,18 @@
 		FBB1316425C23AE500410E56 /* ImageCacheProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB1316325C23AE500410E56 /* ImageCacheProtocol.swift */; };
 		FBB1316825C23B7A00410E56 /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB1316725C23B7A00410E56 /* ImageCache.swift */; };
 		FBB1316C25C23FEA00410E56 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB1316B25C23FEA00410E56 /* ImageLoader.swift */; };
+		FBB1318925C2517600410E56 /* PostDetailModuleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB1318825C2517600410E56 /* PostDetailModuleTests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FBB1317925C24FD500410E56 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FB5F521925BAC8D200EC19AF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FB5F522025BAC8D200EC19AF;
+			remoteInfo = TestTask;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		FB5F522125BAC8D200EC19AF /* TestTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -126,10 +137,20 @@
 		FBB1316325C23AE500410E56 /* ImageCacheProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCacheProtocol.swift; sourceTree = "<group>"; };
 		FBB1316725C23B7A00410E56 /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
 		FBB1316B25C23FEA00410E56 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
+		FBB1317425C24FD500410E56 /* TestTaskTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestTaskTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FBB1317825C24FD500410E56 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FBB1318825C2517600410E56 /* PostDetailModuleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailModuleTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		FB5F521E25BAC8D200EC19AF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FBB1317125C24FD500410E56 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -143,6 +164,7 @@
 			isa = PBXGroup;
 			children = (
 				FB5F522325BAC8D200EC19AF /* TestTask */,
+				FBB1317525C24FD500410E56 /* TestTaskTests */,
 				FB5F522225BAC8D200EC19AF /* Products */,
 			);
 			sourceTree = "<group>";
@@ -151,6 +173,7 @@
 			isa = PBXGroup;
 			children = (
 				FB5F522125BAC8D200EC19AF /* TestTask.app */,
+				FBB1317425C24FD500410E56 /* TestTaskTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -332,6 +355,23 @@
 			path = ImageCache;
 			sourceTree = "<group>";
 		};
+		FBB1317525C24FD500410E56 /* TestTaskTests */ = {
+			isa = PBXGroup;
+			children = (
+				FBB1318C25C2520900410E56 /* TestModulePostDetail */,
+				FBB1317825C24FD500410E56 /* Info.plist */,
+			);
+			path = TestTaskTests;
+			sourceTree = "<group>";
+		};
+		FBB1318C25C2520900410E56 /* TestModulePostDetail */ = {
+			isa = PBXGroup;
+			children = (
+				FBB1318825C2517600410E56 /* PostDetailModuleTests.swift */,
+			);
+			path = TestModulePostDetail;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -352,6 +392,24 @@
 			productReference = FB5F522125BAC8D200EC19AF /* TestTask.app */;
 			productType = "com.apple.product-type.application";
 		};
+		FBB1317325C24FD500410E56 /* TestTaskTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FBB1317B25C24FD500410E56 /* Build configuration list for PBXNativeTarget "TestTaskTests" */;
+			buildPhases = (
+				FBB1317025C24FD500410E56 /* Sources */,
+				FBB1317125C24FD500410E56 /* Frameworks */,
+				FBB1317225C24FD500410E56 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FBB1317A25C24FD500410E56 /* PBXTargetDependency */,
+			);
+			name = TestTaskTests;
+			productName = TestTaskTests;
+			productReference = FBB1317425C24FD500410E56 /* TestTaskTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -363,6 +421,10 @@
 				TargetAttributes = {
 					FB5F522025BAC8D200EC19AF = {
 						CreatedOnToolsVersion = 12.3;
+					};
+					FBB1317325C24FD500410E56 = {
+						CreatedOnToolsVersion = 12.3;
+						TestTargetID = FB5F522025BAC8D200EC19AF;
 					};
 				};
 			};
@@ -380,6 +442,7 @@
 			projectRoot = "";
 			targets = (
 				FB5F522025BAC8D200EC19AF /* TestTask */,
+				FBB1317325C24FD500410E56 /* TestTaskTests */,
 			);
 		};
 /* End PBXProject section */
@@ -391,6 +454,13 @@
 			files = (
 				FB5F523125BAC8D700EC19AF /* LaunchScreen.storyboard in Resources */,
 				FB5F522E25BAC8D700EC19AF /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FBB1317225C24FD500410E56 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -459,7 +529,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		FBB1317025C24FD500410E56 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FBB1318925C2517600410E56 /* PostDetailModuleTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FBB1317A25C24FD500410E56 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FB5F522025BAC8D200EC19AF /* TestTask */;
+			targetProxy = FBB1317925C24FD500410E56 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		FB5F522F25BAC8D700EC19AF /* LaunchScreen.storyboard */ = {
@@ -629,6 +715,46 @@
 			};
 			name = Release;
 		};
+		FBB1317C25C24FD500410E56 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = W69L42NMK2;
+				INFOPLIST_FILE = TestTaskTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "art.jedi-tones.TestTaskTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TestTask.app/TestTask";
+			};
+			name = Debug;
+		};
+		FBB1317D25C24FD500410E56 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = W69L42NMK2;
+				INFOPLIST_FILE = TestTaskTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "art.jedi-tones.TestTaskTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TestTask.app/TestTask";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -646,6 +772,15 @@
 			buildConfigurations = (
 				FB5F523625BAC8D700EC19AF /* Debug */,
 				FB5F523725BAC8D700EC19AF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FBB1317B25C24FD500410E56 /* Build configuration list for PBXNativeTarget "TestTaskTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FBB1317C25C24FD500410E56 /* Debug */,
+				FBB1317D25C24FD500410E56 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

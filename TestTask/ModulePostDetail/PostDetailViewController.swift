@@ -44,6 +44,7 @@ final class PostDetailViewController: UIViewController, PostDetailViewProtocol {
     private let postImage: UIImageView = {
         $0.translatesAutoresizingMaskIntoConstraints = false
         $0.contentMode = .scaleAspectFill
+        $0.layer.cornerRadius = CGFloat(DefaultLayerValue.cornerRadius.rawValue)
         $0.clipsToBounds = true
         return $0
     }(UIImageView())
