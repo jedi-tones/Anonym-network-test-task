@@ -22,13 +22,12 @@ final class PostDetailViewController: UIViewController, PostDetailViewController
     
     //MARK: setupData
     func setupData() {
-        guard let presenter = presenter,
-              let view = view as? PostDetailViewProtocol
+        guard let view = view as? PostDetailViewProtocol
         else { return }
-        view.configure(authorName: presenter.authorName,
-                       postText: presenter.postText,
-                       postTags: presenter.postTags,
-                       postImage: presenter.postImage)
+        view.configure(authorName: presenter?.authorName,
+                       postText: presenter?.postText,
+                       postTags: presenter?.postTags,
+                       postImage: presenter?.postImage)
         self.view.layoutIfNeeded()
     }
 }

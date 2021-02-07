@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreImage
 
 final class ImageLoader {
     static let shared = ImageLoader()
@@ -32,7 +33,7 @@ final class ImageLoader {
                     }
                     return
                 }
-                //self?.cache[url] = image
+                self?.cache[url] = image
                 DispatchQueue.main.async {
                     complition(.success((image, url)))
                 }
@@ -43,3 +44,4 @@ final class ImageLoader {
         }
     }
 }
+
