@@ -32,7 +32,8 @@ final class Router: DataResultRouterProtocol {
     func showDetailResult(selectedItem: Item) {
         guard let navigationController = navigationController,
               let moduleBuilder = moduleBuilder else { return }
-        let viewController = moduleBuilder.createDetailResultModule(router: self, selectedItem: selectedItem)
+        let viewController = moduleBuilder.createDetailResultModule(router: self,
+                                                                    selectedItem: selectedItem)
         navigationController.pushViewController(viewController, animated: true)
     }
 }

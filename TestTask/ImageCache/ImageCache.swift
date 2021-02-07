@@ -40,7 +40,7 @@ extension ImageCache: ImageCacheProtocol {
     
     func image(for url: URL) -> UIImage? {
             lock.lock(); defer { lock.unlock() }
-            // the best case scenario -> there is a decoded image
+            
             if let image = imageCache.object(forKey: url as AnyObject) as? UIImage {
                 return image
             }

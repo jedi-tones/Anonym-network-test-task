@@ -67,6 +67,7 @@
 		FBB1318925C2517600410E56 /* PostDetailModuleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB1318825C2517600410E56 /* PostDetailModuleTests.swift */; };
 		FBB1319625C25BDD00410E56 /* PostDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB1319525C25BDD00410E56 /* PostDetailView.swift */; };
 		FBB1319C25C25C6800410E56 /* PostDetailViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB1319B25C25C6800410E56 /* PostDetailViewProtocol.swift */; };
+		FBB131B125D0904700410E56 /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB131B025D0904700410E56 /* Box.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -144,6 +145,7 @@
 		FBB1318825C2517600410E56 /* PostDetailModuleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailModuleTests.swift; sourceTree = "<group>"; };
 		FBB1319525C25BDD00410E56 /* PostDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailView.swift; sourceTree = "<group>"; };
 		FBB1319B25C25C6800410E56 /* PostDetailViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailViewProtocol.swift; sourceTree = "<group>"; };
+		FBB131B025D0904700410E56 /* Box.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Box.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -261,6 +263,7 @@
 			children = (
 				FB5F527C25BF037500EC19AF /* NavigationService.swift */,
 				FBB1315D25C21F3200410E56 /* LinkGenerateService.swift */,
+				FBB131B025D0904700410E56 /* Box.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -282,23 +285,23 @@
 				FBB130EA25C1D4DF00410E56 /* DataModelData.swift */,
 				FBB130ED25C1D51600410E56 /* Item.swift */,
 				FBB1311425C1D6E400410E56 /* Content.swift */,
+				FBB1312225C1D9C100410E56 /* Comments.swift */,
+				FBB1311725C1D76100410E56 /* ContentData.swift */,
 				FBB130F125C1D57500410E56 /* Author.swift */,
 				FBB130F525C1D59500410E56 /* Auth.swift */,
 				FBB130F825C1D5A700410E56 /* Banner.swift */,
+				FBB1310425C1D62300410E56 /* BannerType.swift */,
 				FBB130FB25C1D5DD00410E56 /* BannerData.swift */,
 				FBB130FE25C1D5FC00410E56 /* ImageData.swift */,
 				FBB1310125C1D61300410E56 /* Size.swift */,
-				FBB1310425C1D62300410E56 /* BannerType.swift */,
 				FBB1310725C1D65700410E56 /* AuthorData.swift */,
 				FBB1310A25C1D66700410E56 /* Gender.swift */,
-				FBB1310D25C1D69700410E56 /* Statistics.swift */,
 				FBB1311025C1D6A800410E56 /* Awards.swift */,
-				FBB1311725C1D76100410E56 /* ContentData.swift */,
 				FBB1311C25C1D98C00410E56 /* Language.swift */,
 				FBB1311F25C1D9AE00410E56 /* Stats.swift */,
-				FBB1312225C1D9C100410E56 /* Comments.swift */,
-				FBB1312525C1D9EC00410E56 /* TimeLeftToSpace.swift */,
 				FBB1312825C1DA0800410E56 /* Status.swift */,
+				FBB1310D25C1D69700410E56 /* Statistics.swift */,
+				FBB1312525C1D9EC00410E56 /* TimeLeftToSpace.swift */,
 				FBB1312B25C1DA2B00410E56 /* ItemType.swift */,
 			);
 			path = "JSON models";
@@ -488,6 +491,7 @@
 				FBB130EE25C1D51600410E56 /* Item.swift in Sources */,
 				FB5F524B25BACDCE00EC19AF /* Router.swift in Sources */,
 				FB5F526C25BAD65200EC19AF /* NetworkError.swift in Sources */,
+				FBB131B125D0904700410E56 /* Box.swift in Sources */,
 				FBB1319625C25BDD00410E56 /* PostDetailView.swift in Sources */,
 				FBB1315E25C21F3200410E56 /* LinkGenerateService.swift in Sources */,
 				FBB1316825C23B7A00410E56 /* ImageCache.swift in Sources */,

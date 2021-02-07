@@ -27,11 +27,15 @@ final class ImageLoader {
                 guard
                     let image = UIImage(data: data)
                 else {
-                    complition(.success((nil, url)))
+                    DispatchQueue.main.async {
+                        complition(.success((nil, url)))
+                    }
                     return
                 }
-                self?.cache[url] = image
-                complition(.success((image, url)))
+                //self?.cache[url] = image
+                DispatchQueue.main.async {
+                    complition(.success((image, url)))
+                }
                 
             case .failure(let error):
                 complition(.failure(error))

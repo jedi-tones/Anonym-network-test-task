@@ -23,8 +23,8 @@ extension NetworkServiceProtocol {
                 complition(.failure(.requestFail))
                 return
             }
-           
-           
+            
+            
             switch response.statusCode {
             case 200:
                 guard let data = data else {
@@ -64,16 +64,14 @@ extension NetworkServiceProtocol {
                 complition(.failure(.requestFail))
                 return
             }
-           
+            
             switch response.statusCode {
             case 200:
                 guard let data = data else {
                     complition(.failure(.invalidData))
                     return
                 }
-                DispatchQueue.main.async {
-                    complition(.success(data))
-                }
+                complition(.success(data))
             case 300:
                 complition(.failure(.requestFail))
             case 400:

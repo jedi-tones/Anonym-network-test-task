@@ -17,6 +17,5 @@ final class NetworkService: NetworkServiceProtocol {
         let request = URLRequest(url: URL)
         complition(.success(request))
     }
-    
 }
 

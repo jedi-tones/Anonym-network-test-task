@@ -13,7 +13,6 @@ final class PostDetailViewController: UIViewController, PostDetailViewController
     override func loadView() {
         super.loadView()
         view = PostDetailView()
-        
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -22,7 +21,7 @@ final class PostDetailViewController: UIViewController, PostDetailViewController
     }
     
     //MARK: setupData
-    private func setupData() {
+    func setupData() {
         guard let presenter = presenter,
               let view = view as? PostDetailViewProtocol
         else { return }

@@ -8,7 +8,8 @@
 import Foundation
 
 struct Statistics: Decodable {
-    let likes, thanks: Int
+    let likes: Int
+    let thanks: Double
     let uniqueName: Bool
     let thanksNextLevel: Int?
 }

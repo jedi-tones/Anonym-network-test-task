@@ -12,7 +12,11 @@ final class PostDetailPresenter: PostDetailPresenterProtocol {
     private weak var view: PostDetailViewControllerProtocol?
     private var item: Item
     
-    var postImage: UIImage?
+    var postImage: UIImage? {
+        didSet {
+            view?.setupData()
+        }
+    }
     var postText: String?
     var postTags: String?
     var authorName: String?
@@ -42,14 +46,10 @@ final class PostDetailPresenter: PostDetailPresenterProtocol {
                         switch result {
                         
                         case .success(let imageTuple):
-                            //if cell don't reuse
-                            if url == imageTuple.1 {
-                                if let image = imageTuple.0 {
-                                    self?.postImage = image
-                                } else {
-                                    self?.postImage = UIImage(systemName: "photo")?.withTintColor(.myLabelColor())
-                                }
-                                
+                            if let image = imageTuple.0 {
+                                self?.postImage = image
+                            } else {
+                                self?.postImage = UIImage(systemName: "photo")?.withTintColor(.myLabelColor())
                             }
                         case .failure(_):
                             break

@@ -14,12 +14,12 @@ struct Item: Decodable, Hashable {
     let contents: [Content]
     let createdAt: Int
     let author: Author?
-    let isCommentable, hasAdultContent, isAuthorHidden, isHiddenInProfile: Bool
-    let language: Language
-    let awards: Awards
-    let status: Status
-    let stats: Stats
-    let isMyFavorite: Bool
+//    let isCommentable, hasAdultContent, isAuthorHidden, isHiddenInProfile: Bool
+//    let language: Language
+//    let awards: Awards
+//    let status: Status
+//    let stats: Stats
+//    let isMyFavorite: Bool
     
     static func == (lhs: Item, rhs: Item) -> Bool {
         lhs.id == rhs.id
