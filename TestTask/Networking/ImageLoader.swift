@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import CoreImage
 
 final class ImageLoader {
     static let shared = ImageLoader()
